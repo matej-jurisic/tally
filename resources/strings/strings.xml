@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<strings>
+  <string id="AppName">Tally</string>
+
+  <string id="SettingTargetApp">Backend</string>
+  <string id="SettingWebhookUrl">URL / Base URL</string>
+  <string id="SettingAuthToken">Token / Password</string>
+  <string id="SettingCurrency">Currency</string>
+  <string id="SettingAccountsFrom">From: names or IDs (comma-sep)</string>
+  <string id="SettingAccountsTo">To: names or IDs (comma-sep)</string>
+  <string id="SettingRequireAccountTo">Require 'Account To'</string>
+  <string id="SettingCategories">Categories (comma-separated)</string>
+  <string id="SettingDescription">Description (comma-separated)</string>
+
+  <string id="LabelDescription">Description</string>
+  <string id="LabelAccountFrom">Account From</string>
+  <string id="LabelAccountTo">Account To</string>
+
+  <string id="TargetGeneric">Generic Webhook</string>
+  <string id="TargetFirefly">Firefly III</string>
+  <string id="LabelAmount">Amount</string>
+  <string id="LabelCategory">Category</string>
+  <string id="LabelConfirm">Confirm</string>
+  <string id="LabelSubmit">START = Submit</string>
+
+  <string id="ResultSuccess">Logged!</string>
+  <string id="ResultError">Failed</string>
+  <string id="ResultNoUrl">No URL set</string>
+  <string id="ResultNoToken">No token set</string>
+
+  <string id="TargetNames">Generic Webhook,Firefly III</string>
+</strings>

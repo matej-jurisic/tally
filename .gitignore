@@ -1,0 +1,14 @@
+developer_key
+bin/
+gen/
+mir/
+internal-mir/
+*.prg
+*.prg.debug.xml
+*.iq
+*-settings.json
+.vscode/
+*.iml
+.idea/
+Thumbs.db
+.DS_Store

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<properties>
+  <!-- 0=Generic Webhook, 1=Firefly III -->
+  <property id="targetApp" type="number">0</property>
+  <property id="webhookUrl" type="string"></property>
+  <property id="authToken" type="string"></property>
+  <property id="currency" type="string">USD</property>
+  <property id="categories" type="string">Food,Transport,Shopping</property>
+  <property id="description" type="string">lunch,coffee,groceries</property>
+  <property id="accountsFrom" type="string">Checking,Cash</property>
+  <property id="accountsTo" type="string">Supermarket,Restaurant,Pharmacy</property>
+  <property id="requireAccountTo" type="boolean">true</property>
+</properties>

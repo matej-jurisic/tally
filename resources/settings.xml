@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<settings>
+
+  <setting propertyKey="@Properties.targetApp" title="@Strings.SettingTargetApp">
+    <settingConfig type="list">
+      <listEntry value="0">@Strings.TargetGeneric</listEntry>
+      <listEntry value="1">@Strings.TargetFirefly</listEntry>
+    </settingConfig>
+  </setting>
+
+  <setting propertyKey="@Properties.webhookUrl" title="@Strings.SettingWebhookUrl">
+    <settingConfig type="alphaNumeric" maxLength="512"/>
+  </setting>
+
+  <setting propertyKey="@Properties.authToken" title="@Strings.SettingAuthToken">
+    <settingConfig type="alphaNumeric" maxLength="2048"/>
+  </setting>
+
+  <setting propertyKey="@Properties.currency" title="@Strings.SettingCurrency">
+    <settingConfig type="alphaNumeric" maxLength="8"/>
+  </setting>
+
+  <setting propertyKey="@Properties.accountsFrom" title="@Strings.SettingAccountsFrom">
+    <settingConfig type="alphaNumeric" maxLength="256"/>
+  </setting>
+
+  <setting propertyKey="@Properties.accountsTo" title="@Strings.SettingAccountsTo">
+    <settingConfig type="alphaNumeric" maxLength="256"/>
+  </setting>
+
+  <setting propertyKey="@Properties.requireAccountTo" title="@Strings.SettingRequireAccountTo">
+    <settingConfig type="boolean"/>
+  </setting>
+
+  <setting propertyKey="@Properties.categories" title="@Strings.SettingCategories">
+    <settingConfig type="alphaNumeric" maxLength="256"/>
+  </setting>
+
+  <setting propertyKey="@Properties.description" title="@Strings.SettingDescription">
+    <settingConfig type="alphaNumeric" maxLength="256"/>
+  </setting>
+
+</settings>

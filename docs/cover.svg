@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="720" viewBox="0 0 1440 720">
+  <rect width="1440" height="720" fill="#1a1030"/>
+  <text x="720" y="360"
+        font-family="'Arial Black', 'Impact', Helvetica, sans-serif"
+        font-size="480" font-weight="900"
+        fill="white" text-anchor="middle" dominant-baseline="middle">T</text>
+</svg>

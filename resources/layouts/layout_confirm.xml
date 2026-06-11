@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<layout id="ConfirmLayout">
+  <label id="LabelAmount"
+         x="center" y="13%"
+         font="Graphics.FONT_MEDIUM"
+         justification="Graphics.TEXT_JUSTIFY_CENTER"
+         color="Graphics.COLOR_WHITE"
+         text=""/>
+  <label id="LabelCategory"
+         x="center" y="29%"
+         font="Graphics.FONT_SMALL"
+         justification="Graphics.TEXT_JUSTIFY_CENTER"
+         color="Graphics.COLOR_WHITE"
+         text=""/>
+  <label id="LabelAccounts"
+         x="center" y="44%"
+         font="Graphics.FONT_XTINY"
+         justification="Graphics.TEXT_JUSTIFY_CENTER"
+         color="Graphics.COLOR_LT_GRAY"
+         text=""/>
+  <label id="LabelNote"
+         x="center" y="57%"
+         font="Graphics.FONT_XTINY"
+         justification="Graphics.TEXT_JUSTIFY_CENTER"
+         color="Graphics.COLOR_LT_GRAY"
+         text=""/>
+  <label id="LabelBackend"
+         x="center" y="70%"
+         font="Graphics.FONT_XTINY"
+         justification="Graphics.TEXT_JUSTIFY_CENTER"
+         color="Graphics.COLOR_LT_GRAY"
+         text=""/>
+  <label id="LabelHint"
+         x="center" y="83%"
+         font="Graphics.FONT_XTINY"
+         justification="Graphics.TEXT_JUSTIFY_CENTER"
+         color="Graphics.COLOR_DK_GRAY"
+         text=""/>
+</layout>
