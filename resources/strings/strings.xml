@@ -4,13 +4,21 @@
 
   <string id="SettingTargetApp">Backend</string>
   <string id="SettingWebhookUrl">URL / Base URL</string>
-  <string id="SettingAuthToken">Token / Password</string>
+  <string id="SettingAuthToken">Token / Password (optional)</string>
   <string id="SettingCurrency">Currency</string>
+  <string id="SettingHideDecimal">Whole numbers only (JPY, HUF…)</string>
   <string id="SettingAccountsFrom">From: names or IDs (comma-sep)</string>
   <string id="SettingAccountsTo">To: names or IDs (comma-sep)</string>
   <string id="SettingRequireAccountTo">Require 'Account To'</string>
   <string id="SettingCategories">Categories (comma-separated)</string>
+  <string id="SettingRequireCategory">Require Category</string>
   <string id="SettingDescription">Description (comma-separated)</string>
+  <string id="SettingRequireDescription">Require Description</string>
+  <string id="SettingAllowCustomCategory">Allow custom category</string>
+  <string id="SettingAllowCustomAccountFrom">Allow custom 'From' account</string>
+  <string id="SettingAllowCustomAccountTo">Allow custom 'To' account</string>
+  <string id="SettingAllowCustomDescription">Allow custom description</string>
+  <string id="SettingDescriptionDefault">Default description (blank = none)</string>
 
   <string id="LabelDescription">Description</string>
   <string id="LabelAccountFrom">Account From</string>

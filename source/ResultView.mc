@@ -6,12 +6,14 @@ import Toybox.Lang;
 class ResultView extends WatchUi.View {
     private var _success as Boolean;
     private var _message as String;
+    private var _model as TallyModel;
     private var _timer as Timer.Timer?;
 
-    function initialize(success as Boolean, message as String) {
+    function initialize(success as Boolean, message as String, model as TallyModel) {
         View.initialize();
         _success = success;
         _message = message;
+        _model = model;
         _timer = null;
     }
 
@@ -28,7 +30,7 @@ class ResultView extends WatchUi.View {
     }
 
     function onTimer() as Void {
-        _popAll();
+        _returnToStart();
     }
 
     function onUpdate(dc as Graphics.Dc) as Void {
@@ -41,7 +43,6 @@ class ResultView extends WatchUi.View {
             dc.drawText(cx, cy, Graphics.FONT_LARGE, _message,
                 Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
         } else {
-            // Colon separates status code from detail — split for two-line display
             var colon = -1;
             for (var i = 0; i < _message.length(); i++) {
                 if (_message.substring(i, i + 2).equals(": ")) { colon = i; break; }
@@ -60,29 +61,30 @@ class ResultView extends WatchUi.View {
         }
     }
 
-    private function _popAll() as Void {
-        // Result, Confirm, Description, AccountTo, AccountFrom, Category → back to Amount
-        WatchUi.popView(WatchUi.SLIDE_DOWN);
-        WatchUi.popView(WatchUi.SLIDE_DOWN);
-        WatchUi.popView(WatchUi.SLIDE_DOWN);
-        WatchUi.popView(WatchUi.SLIDE_DOWN);
-        WatchUi.popView(WatchUi.SLIDE_DOWN);
-        WatchUi.popView(WatchUi.SLIDE_DOWN);
+    function returnToStart() as Void {
+        _returnToStart();
+    }
+
+    private function _returnToStart() as Void {
+        var model = new TallyModel();
+        WatchUi.switchToView(
+            new AmountView(model),
+            new AmountDelegate(model),
+            WatchUi.SLIDE_DOWN
+        );
     }
 }
 
 class ResultDelegate extends WatchUi.BehaviorDelegate {
-    function initialize() {
+    private var _view as ResultView;
+
+    function initialize(view as ResultView) {
         BehaviorDelegate.initialize();
+        _view = view;
     }
 
     function onKey(keyEvent as WatchUi.KeyEvent) as Boolean {
-        WatchUi.popView(WatchUi.SLIDE_DOWN);
-        WatchUi.popView(WatchUi.SLIDE_DOWN);
-        WatchUi.popView(WatchUi.SLIDE_DOWN);
-        WatchUi.popView(WatchUi.SLIDE_DOWN);
-        WatchUi.popView(WatchUi.SLIDE_DOWN);
-        WatchUi.popView(WatchUi.SLIDE_DOWN);
+        _view.returnToStart();
         return true;
     }
 }

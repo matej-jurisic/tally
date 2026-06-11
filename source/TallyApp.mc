@@ -16,9 +16,7 @@ class TallyApp extends Application.AppBase {
 
     function getInitialView() as [WatchUi.Views] or [WatchUi.Views, WatchUi.InputDelegates] {
         var model = new TallyModel();
-        var view = new AmountView(model);
-        var delegate = new AmountDelegate(model);
-        return [view, delegate];
+        return [new AmountView(model), new AmountDelegate(model)];
     }
 }
 
@@ -42,14 +40,23 @@ class TallyGlanceView extends WatchUi.GlanceView {
         if (amount != null) {
             var currency = Application.getApp().getProperty("currency") as String?;
             if (currency == null || currency.equals("")) { currency = "€"; }
-            dc.drawText(cx, cy - 10, Graphics.FONT_MEDIUM,
+
+            dc.drawText(cx, cy - 14, Graphics.FONT_MEDIUM,
                 currency + " " + amount,
                 Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
+
             var cat = (category != null && !(category as String).equals("")) ? category as String : "Expense";
             dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx, cy + 14, Graphics.FONT_XTINY,
+            dc.drawText(cx, cy + 6, Graphics.FONT_XTINY,
                 "last: " + cat,
                 Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
+
+            var ts = Storage.getValue("lastTimestamp") as String?;
+            if (ts != null) {
+                dc.drawText(cx, cy + 22, Graphics.FONT_XTINY,
+                    ts as String,
+                    Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
+            }
         } else {
             dc.drawText(cx, cy, Graphics.FONT_MEDIUM, "Tally",
                 Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);

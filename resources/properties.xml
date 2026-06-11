@@ -5,9 +5,17 @@
   <property id="webhookUrl" type="string"></property>
   <property id="authToken" type="string"></property>
   <property id="currency" type="string">USD</property>
+  <property id="hideDecimal" type="boolean">false</property>
   <property id="categories" type="string">Food,Transport,Shopping</property>
+  <property id="requireCategory" type="boolean">true</property>
   <property id="description" type="string">lunch,coffee,groceries</property>
+  <property id="requireDescription" type="boolean">true</property>
   <property id="accountsFrom" type="string">Checking,Cash</property>
   <property id="accountsTo" type="string">Supermarket,Restaurant,Pharmacy</property>
   <property id="requireAccountTo" type="boolean">true</property>
+  <property id="allowCustomCategory" type="boolean">false</property>
+  <property id="allowCustomAccountFrom" type="boolean">true</property>
+  <property id="allowCustomAccountTo" type="boolean">true</property>
+  <property id="allowCustomDescription" type="boolean">false</property>
+  <property id="descriptionDefault" type="string"></property>
 </properties>

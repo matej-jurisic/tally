@@ -107,6 +107,12 @@ module HttpClient {
         };
     }
 
+    // Returns a short human-readable timestamp for the glance view, e.g. "14:32"
+    function shortTimestamp() as String {
+        var info = Gregorian.info(Time.now(), Time.FORMAT_SHORT);
+        return _pad(info.hour) + ":" + _pad(info.min);
+    }
+
     function _todayDate() as String {
         var info = Gregorian.info(Time.now(), Time.FORMAT_SHORT);
         return info.year.toString() + "-" + _pad(info.month) + "-" + _pad(info.day);

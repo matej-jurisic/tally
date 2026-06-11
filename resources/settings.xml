@@ -20,6 +20,26 @@
     <settingConfig type="alphaNumeric" maxLength="8"/>
   </setting>
 
+  <setting propertyKey="@Properties.hideDecimal" title="@Strings.SettingHideDecimal">
+    <settingConfig type="boolean"/>
+  </setting>
+
+  <setting propertyKey="@Properties.categories" title="@Strings.SettingCategories">
+    <settingConfig type="alphaNumeric" maxLength="256"/>
+  </setting>
+
+  <setting propertyKey="@Properties.requireCategory" title="@Strings.SettingRequireCategory">
+    <settingConfig type="boolean"/>
+  </setting>
+
+  <setting propertyKey="@Properties.description" title="@Strings.SettingDescription">
+    <settingConfig type="alphaNumeric" maxLength="256"/>
+  </setting>
+
+  <setting propertyKey="@Properties.requireDescription" title="@Strings.SettingRequireDescription">
+    <settingConfig type="boolean"/>
+  </setting>
+
   <setting propertyKey="@Properties.accountsFrom" title="@Strings.SettingAccountsFrom">
     <settingConfig type="alphaNumeric" maxLength="256"/>
   </setting>
@@ -32,12 +52,24 @@
     <settingConfig type="boolean"/>
   </setting>
 
-  <setting propertyKey="@Properties.categories" title="@Strings.SettingCategories">
-    <settingConfig type="alphaNumeric" maxLength="256"/>
+  <setting propertyKey="@Properties.allowCustomCategory" title="@Strings.SettingAllowCustomCategory">
+    <settingConfig type="boolean"/>
   </setting>
 
-  <setting propertyKey="@Properties.description" title="@Strings.SettingDescription">
-    <settingConfig type="alphaNumeric" maxLength="256"/>
+  <setting propertyKey="@Properties.allowCustomAccountFrom" title="@Strings.SettingAllowCustomAccountFrom">
+    <settingConfig type="boolean"/>
+  </setting>
+
+  <setting propertyKey="@Properties.allowCustomAccountTo" title="@Strings.SettingAllowCustomAccountTo">
+    <settingConfig type="boolean"/>
+  </setting>
+
+  <setting propertyKey="@Properties.allowCustomDescription" title="@Strings.SettingAllowCustomDescription">
+    <settingConfig type="boolean"/>
+  </setting>
+
+  <setting propertyKey="@Properties.descriptionDefault" title="@Strings.SettingDescriptionDefault">
+    <settingConfig type="alphaNumeric" maxLength="128"/>
   </setting>
 
 </settings>

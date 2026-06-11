@@ -2,6 +2,7 @@ import Toybox.Application;
 import Toybox.WatchUi;
 import Toybox.Graphics;
 import Toybox.Lang;
+import Toybox.System;
 
 class ConfirmView extends WatchUi.View {
     private var _model as TallyModel;
@@ -83,17 +84,7 @@ class ConfirmDelegate extends WatchUi.BehaviorDelegate {
     }
 
     function onHttpResult(responseCode as Number, data) as Void {
-        var dataType = "null";
-        if (data instanceof String)     { dataType = "String"; }
-        else if (data instanceof Dictionary) { dataType = "Dictionary"; }
-        else if (data instanceof Number){ dataType = "Number"; }
-        System.println("TALLY response code=" + responseCode + " dataType=" + dataType);
-        if (data instanceof Dictionary) {
-            System.println("TALLY data keys=" + (data as Dictionary).keys().toString());
-        } else if (data instanceof String) {
-            var s = data as String;
-            System.println("TALLY data=" + (s.length() > 200 ? s.substring(0, 200) : s));
-        }
+        System.println("TALLY response code=" + responseCode);
 
         var success = (responseCode / 100 == 2) || (responseCode == -400);
         var msg;
@@ -101,14 +92,16 @@ class ConfirmDelegate extends WatchUi.BehaviorDelegate {
             msg = (responseCode == -400) ? "Sent!" : "Logged!";
             Application.Storage.setValue("lastAmount",   _model.amount.format("%.2f"));
             Application.Storage.setValue("lastCategory", _model.category);
+            Application.Storage.setValue("lastTimestamp", HttpClient.shortTimestamp());
         } else if (responseCode == 0 && data instanceof String) {
             msg = data as String;
         } else {
             msg = responseCode.toString() + ": " + _extractError(data);
         }
+        var resultView = new ResultView(success, msg, _model);
         WatchUi.pushView(
-            new ResultView(success, msg),
-            new ResultDelegate(),
+            resultView,
+            new ResultDelegate(resultView),
             WatchUi.SLIDE_UP
         );
     }

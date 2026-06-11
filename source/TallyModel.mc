@@ -12,6 +12,14 @@ class TallyModel {
     var accountsFrom as Array;
     var accountsTo as Array;
     var requireAccountTo as Boolean;
+    var requireCategory as Boolean;
+    var requireDescription as Boolean;
+    var hideDecimal as Boolean;
+    var allowCustomCategory as Boolean;
+    var allowCustomAccountFrom as Boolean;
+    var allowCustomAccountTo as Boolean;
+    var allowCustomDescription as Boolean;
+    var descriptionDefault as String;
 
     function initialize() {
         amount = 0.0f;
@@ -19,12 +27,25 @@ class TallyModel {
         description = "";
         accountFrom = "";
         accountTo = "";
-        categories  = _parseProperty("categories",   "Uncategorized");
-        descriptions = _parseProperty("description", "");
-        accountsFrom = _parseProperty("accountsFrom", "");
-        accountsTo   = _parseProperty("accountsTo",   "");
-        requireAccountTo = Application.getApp().getProperty("requireAccountTo") as Boolean;
-        if (requireAccountTo == null) { requireAccountTo = true; }
+        categories    = _parseProperty("categories",   "Uncategorized");
+        descriptions  = _parseProperty("description",  "");
+        accountsFrom  = _parseProperty("accountsFrom", "");
+        accountsTo    = _parseProperty("accountsTo",   "");
+        var app = Application.getApp();
+        requireAccountTo  = _bool(app.getProperty("requireAccountTo"),  true);
+        requireCategory   = _bool(app.getProperty("requireCategory"),   true);
+        requireDescription = _bool(app.getProperty("requireDescription"), true);
+        hideDecimal            = _bool(app.getProperty("hideDecimal"),            false);
+        allowCustomCategory    = _bool(app.getProperty("allowCustomCategory"),    false);
+        allowCustomAccountFrom = _bool(app.getProperty("allowCustomAccountFrom"), true);
+        allowCustomAccountTo   = _bool(app.getProperty("allowCustomAccountTo"),   true);
+        allowCustomDescription = _bool(app.getProperty("allowCustomDescription"), false);
+        var dd = app.getProperty("descriptionDefault") as String;
+        descriptionDefault = (dd != null) ? dd : "";
+    }
+
+    private function _bool(val as Boolean, fallback as Boolean) as Boolean {
+        return (val != null) ? val : fallback;
     }
 
     private function _parseProperty(key as String, fallback as String) as Array {
